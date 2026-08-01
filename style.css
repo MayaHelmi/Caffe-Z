@@ -26,3 +26,42 @@ button {
 button:hover {
     background-color: #8b5e34;
 }
+
+/* hero section */
+
+.hero .intro {
+    max-width: 600px;
+    margin: 20px auto 30px auto;
+    color: #6b4226;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+/* the order card that app.js builds with the DOM */
+
+.order-card {
+    background-color: white;
+    max-width: 320px;
+    margin: 40px auto 0 auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid #e0d3c3;
+    text-align: left;
+}
+
+.order-card p {
+    font-weight: bold;
+    font-size: 20px;
+    color: #6b4226;
+    margin: 0 0 10px 0;
+}
+
+.order-card ol {
+    margin: 0;
+    padding-left: 20px;
+    color: #5a4030;
+}
+
+.order-card li {
+    padding: 4px 0;
+}

@@ -33,11 +33,34 @@ function getGender() {
 It is called inside `order()` in the same place the prompt used to be, so the task works
 exactly like it did before — the greeting and the fallback `else` behave the same.
 
+## Ex 4 update — DOM
+
+The order is no longer only shown in alerts, it is also written back into the page.
+
+- `index.html` now has a hero section with an introduction paragraph about the website,
+  and an empty `<div id="orderDetails">` that JavaScript can read.
+- `app.js` has a `showOrder()` function that builds the elements with the DOM
+  (`div` > `p` > `ol` > `li`), fills them with the data the user entered, and appends
+  them to that div.
+
+```
+<div class="order-card">
+    <p>Wesam</p>
+    <ol>
+        <li>Gender : female</li>
+        <li>Temperature : hot</li>
+        <li>Order : Coffe</li>
+    </ol>
+</div>
+```
+
+The list shows the inputs this task actually collects (gender, hot/cold, drink).
+
 ## Files
 
-- `index.html` — the page and the Order Drink button
-- `app.js` — the `order()` and `getGender()` functions
-- `style.css` — cafe styling (brown palette, centred layout)
+- `index.html` — hero section, the Order Drink button, and the `orderDetails` div
+- `app.js` — the `order()`, `getGender()` and `showOrder()` functions
+- `style.css` — cafe styling (brown palette, centred layout) and the order card
 
 ## How to Run
 
