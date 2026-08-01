@@ -8,13 +8,28 @@
 
 <body>
 
-    <h1>My Cafe</h1>
+    <!-- hero section -->
+    <section class="hero">
 
-    <p>Welcome to our cafe!</p>
+        <h1>My Cafe</h1>
 
-    <button onclick="order()">
-        Order Drink
-    </button>
+        <p>Welcome to our cafe!</p>
+
+        <p class="intro">
+            My Cafe is a small ordering page built with HTML, CSS, and JavaScript.
+            Click the button below and answer a few quick questions — your name, your
+            gender, and whether you want a hot or cold drink — and we will prepare your
+            order and show it right here on the page.
+        </p>
+
+        <button onclick="order()">
+            Order Drink
+        </button>
+
+    </section>
+
+    <!-- the order details are written here by app.js -->
+    <div id="orderDetails"></div>
 
     <script src="app.js"></script>
 
