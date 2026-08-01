@@ -10,7 +10,6 @@ function getGender() {
 
 
 // Ex 4: build the order details with the DOM and write them back to the page
-// div > p > ol > li
 
 function showOrder(name, gender, temperature, drink) {
 
