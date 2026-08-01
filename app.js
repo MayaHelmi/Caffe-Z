@@ -9,6 +9,43 @@ function getGender() {
 }
 
 
+// Ex 4: build the order details with the DOM and write them back to the page
+// div > p > ol > li
+
+function showOrder(name, gender, temperature, drink) {
+
+    let container = document.getElementById("orderDetails");
+
+    container.innerHTML = ""; // clear the previous order first
+
+    let div = document.createElement("div");
+    div.className = "order-card";
+
+    let paragraph = document.createElement("p");
+    paragraph.textContent = name;
+    div.appendChild(paragraph);
+
+    let list = document.createElement("ol");
+
+    let genderItem = document.createElement("li");
+    genderItem.textContent = "Gender : " + gender;
+    list.appendChild(genderItem);
+
+    let temperatureItem = document.createElement("li");
+    temperatureItem.textContent = "Temperature : " + temperature;
+    list.appendChild(temperatureItem);
+
+    let drinkItem = document.createElement("li");
+    drinkItem.textContent = "Order : " + drink;
+    list.appendChild(drinkItem);
+
+    div.appendChild(list);
+
+    container.appendChild(div);
+
+}
+
+
 function order() {
 
     let name = prompt("Enter your name:");
@@ -34,5 +71,7 @@ function order() {
     alert("Your " + temperature + " " + drink + " is getting prepared");
 
     console.log(name + " ordered a " + temperature + " " + drink);
+
+    showOrder(name, gender, temperature, drink); // write the inputs to the html page
 
 }
