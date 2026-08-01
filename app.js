@@ -1,8 +1,19 @@
+// Ex 3: the gender question is now its own function
+
+function getGender() {
+
+    let gender = prompt("Enter your gender (male/female):");
+
+    return gender;
+
+}
+
+
 function order() {
 
     let name = prompt("Enter your name:");
 
-    let gender = prompt("Enter your gender (male/female):");
+    let gender = getGender(); // calling the gender function in the proper place
 
     if (gender == "male") {
         alert("Welcome Mr " + name);
