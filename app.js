@@ -1,8 +1,8 @@
-// Ex 3: the gender question is now its own function
+// Ex 3: the gender question is still its own function, it just reads the form now
 
 function getGender() {
 
-    let gender = prompt("Enter your gender (male/female):");
+    let gender = document.getElementById("gender").value;
 
     return gender;
 
@@ -11,11 +11,28 @@ function getGender() {
 
 // Ex 4: build the order details with the DOM and write them back to the page
 
-function showOrder(name, gender, temperature, drink) {
+function showOrder(name, age, gender, orderType, temperature) {
 
     let container = document.getElementById("orderDetails");
 
-    container.innerHTML = ""; // clear the previous order first
+    container.innerHTML = "";
+
+    let greeting = document.createElement("p");
+    greeting.className = "greeting";
+
+    if (gender == "male") {
+        greeting.textContent = "Welcome Mr " + name;
+    }
+
+    else if (gender == "female") {
+        greeting.textContent = "Welcome Ms " + name;
+    }
+
+    else {
+        greeting.textContent = "Welcome " + name;
+    }
+
+    container.appendChild(greeting);
 
     let div = document.createElement("div");
     div.className = "order-card";
@@ -30,13 +47,17 @@ function showOrder(name, gender, temperature, drink) {
     genderItem.textContent = "Gender : " + gender;
     list.appendChild(genderItem);
 
+    let ageItem = document.createElement("li");
+    ageItem.textContent = "Age : " + age;
+    list.appendChild(ageItem);
+
     let temperatureItem = document.createElement("li");
     temperatureItem.textContent = "Temperature : " + temperature;
     list.appendChild(temperatureItem);
 
-    let drinkItem = document.createElement("li");
-    drinkItem.textContent = "Order : " + drink;
-    list.appendChild(drinkItem);
+    let orderItem = document.createElement("li");
+    orderItem.textContent = "Order : " + orderType;
+    list.appendChild(orderItem);
 
     div.appendChild(list);
 
@@ -45,32 +66,29 @@ function showOrder(name, gender, temperature, drink) {
 }
 
 
-function order() {
+// Ex 5: the answers come from the form now, so we listen for the submit event
 
-    let name = prompt("Enter your name:");
+function order(event) {
 
-    let gender = getGender(); // calling the gender function in the proper place
+    event.preventDefault(); // stop the browser from reloading the page
 
-    if (gender == "male") {
-        alert("Welcome Mr " + name);
-    } 
-    
-    else if (gender == "female") {
-        alert("Welcome Ms " + name);
-    } 
-    
-    else {
-        alert("Welcome " + name);
-    }
+    let name = document.getElementById("username").value;
 
-    let temperature = prompt("Do you want hot or cold drink?");
+    let age = document.getElementById("age").value;
 
-    let drink = prompt("What drink do you want?");
+    let gender = getGender();
 
-    alert("Your " + temperature + " " + drink + " is getting prepared");
+    let orderType = document.getElementById("orderType").value;
 
-    console.log(name + " ordered a " + temperature + " " + drink);
+    let temperature = document.querySelector("input[name='temperature']:checked").value;
 
-    showOrder(name, gender, temperature, drink); // write the inputs to the html page
+    console.log(name + " ordered a " + temperature + " " + orderType);
+
+    showOrder(name, age, gender, orderType, temperature);
 
 }
+
+
+let form = document.getElementById("orderForm");
+
+form.addEventListener("submit", order); // run order() when the form is submitted
