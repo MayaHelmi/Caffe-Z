@@ -37,10 +37,85 @@ button:hover {
     font-size: 17px;
 }
 
+/* the order form */
+
+#orderForm {
+    background-color: white;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    border-radius: 10px;
+    border: 1px solid #e0d3c3;
+    text-align: left;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+#orderForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: #6b4226;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#orderForm input[type="text"],
+#orderForm input[type="number"],
+#orderForm select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ddc9ad;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fdfaf6;
+    box-sizing: border-box;
+}
+
+#orderForm input:focus,
+#orderForm select:focus {
+    outline: 2px solid #8b5e34;
+    outline-offset: 1px;
+}
+
+fieldset.field {
+    border: 1px solid #e0d3c3;
+    border-radius: 6px;
+    padding: 10px 14px 12px;
+}
+
+legend {
+    color: #6b4226;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+#orderForm label.radio {
+    display: inline-block;
+    margin: 4px 16px 0 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#orderForm button {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.greeting {
+    margin: 35px 0 0 0;
+    color: #6b4226;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .order-card {
     background-color: white;
     max-width: 320px;
-    margin: 40px auto 0 auto;
+    margin: 15px auto 0 auto;
     padding: 20px 30px;
     border-radius: 10px;
     border: 1px solid #e0d3c3;

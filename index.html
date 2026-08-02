@@ -8,7 +8,6 @@
 
 <body>
 
-    <!-- hero section -->
     <section class="hero">
 
         <h1>My Cafe</h1>
@@ -17,16 +16,61 @@
 
         <p class="intro">
             My Cafe is a small ordering page built with HTML, CSS, and JavaScript.
-            Click the button below and answer a few quick questions — your name, your
-            gender, and whether you want a hot or cold drink — and we will prepare your
-            order and show it right here on the page.
+            Fill in the form below with your name, your age, your gender and the drink
+            you want, and we will prepare your order and show it right here on the page.
         </p>
 
-        <button onclick="order()">
-            Order Drink
-        </button>
-
     </section>
+
+    <form id="orderForm">
+
+        <div class="field">
+            <label for="username">Name</label>
+            <input type="text" id="username" placeholder="Your name" required>
+        </div>
+
+        <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Your age" min="1" max="120" required>
+        </div>
+
+        <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+                <option value="">Choose one</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="orderType">Order type</label>
+            <select id="orderType" required>
+                <option value="">Choose one</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Tea">Tea</option>
+                <option value="Hot chocolate">Hot chocolate</option>
+                <option value="Juice">Juice</option>
+            </select>
+        </div>
+
+        <fieldset class="field">
+
+            <legend>Do you want it hot or cold?</legend>
+
+            <label class="radio">
+                <input type="radio" name="temperature" value="hot" checked> Hot
+            </label>
+
+            <label class="radio">
+                <input type="radio" name="temperature" value="cold"> Cold
+            </label>
+
+        </fieldset>
+
+        <button type="submit">Order Drink</button>
+
+    </form>
 
     <div id="orderDetails"></div>
 
