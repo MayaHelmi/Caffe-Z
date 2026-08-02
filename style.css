@@ -37,8 +37,6 @@ button:hover {
     font-size: 17px;
 }
 
-/* the order card that app.js builds with the DOM */
-
 .order-card {
     background-color: white;
     max-width: 320px;
